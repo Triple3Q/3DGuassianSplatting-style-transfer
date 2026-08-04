@@ -1,0 +1,40 @@
+# =============================================================================
+# Project 依赖（Python 3.10）
+#
+# 重要：PyTorch 不要通过本文件安装，请按 README「手动安装步骤」单独安装 cu128 版本。
+# RTX 50 系（sm_120）必须使用 cu128，旧版 cu118/cu124 无法在 GPU 上运行。
+#
+# 安装顺序：
+#   1. 创建 Conda 环境 python=3.10
+#   2. 安装 PyTorch cu128（见 README）
+#   3. pip install -r requirements.txt
+#   4. 编译 diff-gaussian-rasterization（见 README，gs_render_diff.py 必需）
+# =============================================================================
+
+# --- 风格迁移（AD + CSGO）---
+diffusers==0.25.1
+transformers==4.40.2
+accelerate>=0.21.0,<2.0.0
+safetensors>=0.3.0
+einops>=0.6.0
+huggingface-hub==0.24.5
+
+# --- 图像 / 数值 ---
+numpy>=1.24.0,<3.0.0
+Pillow>=9.5.0
+opencv-python>=4.8.0
+matplotlib>=3.7.0
+
+# --- 3DGS PLY 读写与预览 ---
+plyfile>=0.8.0
+open3d>=0.17.0
+
+# --- OBJ 多视角渲染（render_multiview_obj.py，Windows 可用）---
+trimesh>=4.0.0
+pyrender>=0.1.45
+PyOpenGL>=3.1.0
+imageio>=2.0.0
+
+# --- 工具 ---
+tqdm>=4.65.0
+ninja>=1.11.0

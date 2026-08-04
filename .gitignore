@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+*.egg
+.venv/
+venv/
+.env
+
+# CSGO / SDXL weights (too large for GitHub; download separately)
+CSGO/csgo_*.bin
+CSGO/base_models/
+
+# Runtime outputs
+rendered_images/
+output/
+3DGS_output/
+style.png
+style_resize.png
+*.ply
+
+# Keep sample assets that are not runtime outputs
+!house/
+!style_image/
+
+# Build / compile artifacts
+**/build/
+**/bin/
+**/*.obj.exp
+**/*.obj.lib
+*.pyd
+*.so
+*.dll
+*.lib
+*.exp
+*.ilk
+*.pdb
+
+# third_party gaussian-splatting: skip demos & local builds
+third_party/gaussian-splatting/assets/
+third_party/gaussian-splatting/SIBR_viewers/
+third_party/gaussian-splatting/output/
+third_party/gaussian-splatting/**/diff_gaussian_rasterization.egg-info/
+
+# mesh2splat local build products (source + thirdParty stay tracked)
+mesh2splat-main/bin/
+mesh2splat-main/build/
+mesh2splat-main/lib/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+*.log
+.cursor/
